@@ -1,3 +1,6 @@
+alias ddb-local='java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb'
+alias mongo-start='mongod --config /usr/local/etc/mongod.conf --path ./data'
 alias mys='mysql'
 alias myss='mysql.server'
 alias pg='postgres'
+alias pg-start='pg_ctl -D /usr/local/var/postgres start'

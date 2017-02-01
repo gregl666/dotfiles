@@ -35,6 +35,7 @@ alias gap='git add --patch'
 alias gau='git add --update'
 alias gb='git branch -v'
 alias gba='git branch -vv --all'
+alias gbd='git branch -D'
 alias gc='git commit -v'
 # Commit all changed files
 alias gca='git commit -v --all'
@@ -58,6 +59,7 @@ gco() {
   fi
 }
 
+alias gcoa='gco -- .'
 alias gcop='gco --patch'
 alias gd='git diff --find-renames'
 alias gdi='git diff --cached --find-renames'
@@ -73,8 +75,7 @@ alias gj='git-jump'
 git-new() {
   [ ! -d "$1" ] && mkdir "$1" &&
   cd "$1" &&
-  git init &&
-  touch .gitignore
+  git init
 }
 
 alias glog='git log --date-order --pretty="format:%C(yellow)%h%Cred%d %<(50)%Creset%s %>(13)%Cgreen%ar %Cblue%an%Creset"'
@@ -92,7 +93,10 @@ gls() {
 alias gm='git merge --no-ff'
 alias gmf='git merge --ff-only'
 alias gp='git push'
+alias gpl='git pull --ff-only'
+alias gpr='git pull --rebase'
 alias gpthis='gp origin $(git_current_branch)'
+alias grm='git rebase master'
 alias grv='git remote -v'
 alias gs='git show'
 alias gsls='git diff-tree --no-commit-id --name-only -r HEAD'
